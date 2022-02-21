@@ -16,6 +16,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag pyramid
     - name: Run Docker Image
-      run: docker run pyramid
-    - name: Docker ls  
-      run: docker run pyramid ls
+      run: docker run pyramid php /cli.php 9
