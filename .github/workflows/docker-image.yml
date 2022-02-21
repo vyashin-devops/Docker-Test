@@ -2,9 +2,8 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: 
+        - main
 
 jobs:
 
@@ -17,18 +16,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag pyramid
     - name: Run Docker Image
-      run: |
-        docker run pyramid
-        docker run pyramid ls
-      
-      
-      
-      
-#     steps:
-#     - uses: actions/checkout@v2
-#     - name: Build the Docker image
-#       run: |
-#        docker build . --file Dockerfile --tag pyramid
-#        docker run pyramid
-
-      
+      run: docker run pyramid
+    - name: Docker ls  
+      run: docker run pyramid ls
